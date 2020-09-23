@@ -95,4 +95,25 @@ public class OperationTest {
         onView(withId(R.id.button_equal)).perform(click());
         onView(withId(R.id.output)).check(matches(withText("0")));
     }
+
+    @Test
+    public void repeatedCalcTest() {
+        onView(withId(R.id.button1)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("1")));
+        onView(withId(R.id.button_add)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("1+")));
+        onView(withId(R.id.button2)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("2")));
+        onView(withId(R.id.button_equal)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("3")));
+
+        onView(withId(R.id.button2)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("2")));
+        onView(withId(R.id.button_multi)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("6×")));
+        onView(withId(R.id.button2)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("2")));
+        onView(withId(R.id.button_equal)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("12")));
+    }
 }

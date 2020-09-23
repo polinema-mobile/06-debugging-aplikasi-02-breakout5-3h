@@ -83,6 +83,18 @@ public class TesKlikButton {
     }
 
     @Test
+    public void tesKlikButtonNoMoreThanOne() {
+        onView(withId(R.id.button0)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("0")));
+        onView(withId(R.id.button1)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("01")));
+        onView(withId(R.id.button2)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("012")));
+        onView(withId(R.id.button3)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText("0123")));
+    }
+
+    @Test
     public void testKlikButtonEqual() {
         onView(withId(R.id.button_equal)).perform(click());
         onView(withId(R.id.output)).check(matches(withText("Error")));
