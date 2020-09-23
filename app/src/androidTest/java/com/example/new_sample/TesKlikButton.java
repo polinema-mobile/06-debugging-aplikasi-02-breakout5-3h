@@ -82,6 +82,54 @@ public class TesKlikButton {
     }
 
     @Test
+    public void testKlikButtonEqual() {
+        onView(withId(R.id.button_equal)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("Error")));
+    }
+
+    @Test
+    public void tesKlikButtonMulti() {
+        onView(withId(R.id.button_multi)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("Error")));
+    }
+
+    @Test
+    public void tesKlikButtonDevide() {
+        onView(withId(R.id.button_divide)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("Error")));
+    }
+
+    @Test
+    public void tesKlikButtonAdd() {
+        onView(withId(R.id.button_add)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("Error")));
+    }
+
+    @Test
+    public void tesKlikButtonSub() {
+        onView(withId(R.id.button_sub)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("Error")));
+    }
+
+    @Test
+    public void tesKlikButtonPara1() {
+        onView(withId(R.id.button_para1)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("Error")));
+    }
+
+    @Test
+    public void tesKlikButtonPara2() {
+        onView(withId(R.id.button_para2)).perform(click());
+        onView(withId(R.id.output)).check(matches(withText("Error")));
+    }
+
+    @Test
+    public void tesKlikButtonDot() {
+        onView(withId(R.id.button_dot)).perform(click());
+        onView(withId(R.id.input)).check(matches(withText(".")));
+    }
+
+    @Test
     public void tesKlikButtonClear() {
         onView(withId(R.id.button5)).perform(click());
         onView(withId(R.id.input)).check(matches(withText("5")));
@@ -91,3 +139,4 @@ public class TesKlikButton {
         onView(withId(R.id.input)).check(matches(withText("5")));
     }
 }
+
